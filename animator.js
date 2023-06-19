@@ -21,7 +21,7 @@ function createAndAnimate(file, spriteHeight, spriteWidth, frames, speed) {
     img.src = URL.createObjectURL(file);
     img.onload = function() {
         // set canvas dimensions based on sprite width and heightth;
-        canvas.width = spriteWid
+        canvas.width = spriteWidth
         canvas.height = spriteHeight;
         let currentFrame = 0;
         function animate() {

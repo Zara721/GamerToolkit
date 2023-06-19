@@ -4,7 +4,6 @@ const sortTool = document.getElementById('sortTool');
 const confirmBtn = document.getElementById('confirm-btn');
 
 const filterSelect = document.getElementById('filterTool');
-const sortToolSelect = document.getElementById('sortTool');
 const sortTypeSelect = document.getElementById('sortType');
 
 uploadFile.addEventListener('change', () => {
@@ -53,7 +52,7 @@ confirmBtn.addEventListener('click', () => {
         console.log(data)
 
         // get sort values
-        const sortTool = sortToolSelect.value;
+        const sortToolValue = sortTool.value;
         const sortType = sortTypeSelect.value;
 
         //negative means a is sorted before b
@@ -62,8 +61,8 @@ confirmBtn.addEventListener('click', () => {
 
         // sort data based on selected column and sort type
         data.sort((a, b) => {
-            const aValue = a[sortTool];
-            const bValue = b[sortTool];
+            const aValue = a[sortToolValue];
+            const bValue = b[sortToolValue];
 
             //isNan stands for “is Not a Number”, if variable is not a number, it return true, else return false.
             //.localeCompare method returns sort order -1, 1, or 0 (for sorted before, sorted after, or equal)
