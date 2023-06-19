@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+    <head>
+        <title>Endless Scroller</title>
+        <link href="scroller.css" type="text/css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Poppins:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="banner">
+            <a href="index.html">Home Page</a>
+            <div class="tool-links">
+              <div class="dropdown">
+                <p>Scroller</p>
+                <div class="dropdown-content">
+                  <a href="parallaxScroller.html">Parallax Scroller</a>
+                  <a href="endlessScroller.html">Endless Scroller</a>
+                </div>
+              </div>
+              <a href="animator.html">Animator</a>
+              <a href="spritesheetAnimator.html">Sprite Sheet Animator</a>
+              <a href="gameSales.html">Video Game Sales</a>
+            </div>
+          </div>
+
+        <h1>Endless Scroller</h1>
+        
+        <div class="input-container">
+            <label for="imgHeight">Image Height (px):</label>
+            <input type="number" id="imgHeight" step="any">
+        </div>
+        <div class="input-container">
+            <label for="imgWidth">Image Width (px):</label>
+            <input type="number" id="imgWidth" step="any">
+        </div>
+        <div class="input-container">
+            <label for="viewportWidth">Viewport Width (px):</label>
+            <input type="number" id="viewportWidth" step="any">
+        </div>
+        <div class="input-container">
+            <label for="scrollSpeed">Scroll Speed: </label>
+            <input type="range" min="1" max="10" value="5" class="slider" id="scrollSpeed">
+        </div>
+
+        <div class="file-input-container">
+            <input type="file" id="fileInput" accept="image/*">
+            <button id="animateButton">Animate</button>
+        </div>
+
+        <div class="canvas-container"></div>
+
+        <script src="endlessScroller.js"></script>
+        
+    </body>
+</html>

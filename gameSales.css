@@ -1,0 +1,137 @@
+body {
+    background-color: #f2f2f2;
+    margin: 20px;
+    font-family: 'Cormorant Garamond';
+}
+
+.banner {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    height: 30px; 
+  }
+  
+.banner a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+}
+  
+.tool-links {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center; 
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: black;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.input-container {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.file-input-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+input[type="number"] {
+    border: none;
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#confirm-btn{
+  background-color: #e0e0e0;
+  color: black;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  width: 100px;
+
+  font-family: 'Cormorant Garamond';
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#confirm-btn:hover {
+  background-color: #d0d0d0;
+  cursor: pointer;
+}
+
+.filter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.filter p {
+    margin-right: 10px;
+    font-family: 'Cormorant Garamond';
+    font-weight: bold;
+}
+
+.filter select {
+    margin-right: 5px;
+    font-family: 'Cormorant Garamond';
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* table style */
+#table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+    font-family: 'Cormorant Garamond';
+    font-weight: bold;
+  }
+  
+#table th, #table td {
+    border: 1px solid #ffffff;
+    padding: 8px;
+    text-align: left;
+}
+
+#table th {
+    background-color: #ffffff;
+    font-weight: bold;
+}
+
+#table tr:hover {
+    background-color: #ddd;
+}
+  
+

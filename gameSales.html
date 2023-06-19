@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+    <head>
+        <title>Video Game Sales</title>
+        <link href="gameSales.css" type="text/css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Poppins:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="banner">
+            <a href="index.html">Home Page</a>
+            <div class="tool-links">
+              <div class="dropdown">
+                <p>Scroller</p>
+                <div class="dropdown-content">
+                  <a href="parallaxScroller.html">Parallax Scroller</a>
+                  <a href="endlessScroller.html">Endless Scroller</a>
+                </div>
+              </div>
+              <a href="animator.html">Animator</a>
+              <a href="spritesheetAnimator.html">Sprite Sheet Animator</a>
+              <a href="gameSales.html">Video Game Sales</a>
+            </div>
+          </div>
+
+        <h1>Video Game Sales</h1>
+        
+        <div class="upload">
+            <input type="file" id="uploadFile">
+        </div>
+
+        <div class="filter">
+            <p>Sort by: </p>
+            <select id="sortTool"><select>
+
+            <select id="sortType">
+              <option value="up">Ascending</option>
+              <option value="down">Descending</option>
+            <select>
+        </div>
+
+        <button id="confirm-btn">Confirm</button>
+        
+        <div class="output">
+          <p id="outputBox"></p>
+        </div>
+
+        <script src="gameSales.js"></script>
+        
+    </body>
+</html>

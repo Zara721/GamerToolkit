@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+    <head>
+        <title>Sprite Sheet Animator</title>
+        <link href="scroller.css" type="text/css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Poppins:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body>
+      <div class="banner">
+        <a href="index.html">Home Page</a>
+        <div class="tool-links">
+          <div class="dropdown">
+            <p>Scroller</p>
+            <div class="dropdown-content">
+              <a href="parallaxScroller.html">Parallax Scroller</a>
+              <a href="endlessScroller.html">Endless Scroller</a>
+            </div>
+          </div>
+          <a href="animator.html">Animator</a>
+          <a href="spritesheetAnimator.html">Sprite Sheet Animator</a>
+          <a href="gameSales.html">Video Game Sales</a>
+        </div>
+      </div>
+
+        <h1>Sprite Sheet Animator</h1>
+        
+        <div class="input-container">
+            <label for="spriteHeight">Indivdual Sprite Height (px):</label>
+            <input type="number" id="spriteHeight" step="any">
+        </div>
+        <div class="input-container">
+            <label for="spriteWidth">Indivdual Sprite Width (px):</label>
+            <input type="number" id="spriteWidth" step="any">
+        </div>
+       
+        <div class="input-container">
+            <label for="speed">Playback Speed (ms):</label>
+            <input type="number" id="speed" step="any">
+        </div>
+
+        <div class="file-input-container">
+            <label for="fileInput">Upload Sprite Sheet (image)</label>
+            <input type="file" id="fileInput" accept="image/*">
+            <label for="cvsInput">Upload Sprite Sheet Parameters (cvs)</label>
+            <input type="file" id="cvsInput">
+        </div>
+
+        <div class="search">
+          <p>Choose Animation: </p>
+          <select id="searchTool"><select>
+        </div>
+
+        <button id="animateButton">Show Animations</button>
+
+        <div class="canvas-container"></div>
+
+        <script src="spritesheetAnimator.js"></script>
+        
+    </body>
+</html>
+
