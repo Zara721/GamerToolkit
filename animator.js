@@ -20,12 +20,16 @@ function createAndAnimate(file, spriteHeight, spriteWidth, frames, speed) {
     const img = new Image();
     img.src = URL.createObjectURL(file);
     img.onload = function() {
-        canvas.width = spriteWidth;
+        // set canvas dimensions based on sprite width and heightth;
+        canvas.width = spriteWid
         canvas.height = spriteHeight;
         let currentFrame = 0;
         function animate() {
             ctx.clearRect(0, 0, spriteWidth, spriteHeight);
+             // draw the current frame of the sprite image
             ctx.drawImage(img, currentFrame * spriteWidth, 0, spriteWidth, spriteHeight, 0, 0, spriteWidth, spriteHeight);
+            // increase the current frame and loop back to the first frame if necessary
+            //make sure  that the animation stays within the range of available frames
             currentFrame = (currentFrame + 1) % frames;
             if (fileInput.files.length === 0) {
                 clearCanvas();

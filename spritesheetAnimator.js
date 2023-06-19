@@ -8,12 +8,14 @@ let animations = [];
 let spriteAnimations = [];
 
 cvsFile.addEventListener('change', () => {
+  // read the contents of the selected file
   const fileReader = new FileReader();
   fileReader.readAsText(cvsFile.files[0]); 
   fileReader.onload = function () {
     const text = fileReader.result;
     const lines = text.split('\n');
 
+    // split the first line (header) and second line (animations)
     header = lines[0].split(',');
     animations = lines[1].split(',');
 
@@ -21,13 +23,15 @@ cvsFile.addEventListener('change', () => {
   }
 });
 
+// creates the search tool selector with all the animation names based on the header contents
 function createSelector(header) {
     console.log("header: " + header)
     // remove all existing options
     while (searchTool.firstChild) {
       searchTool.removeChild(searchTool.firstChild);
     }
-  
+    
+    // create options for each header item
     for (let i = 0; i < header.length; i++) {
       let newOption = document.createElement("option");
       newOption.value = header[i];
@@ -40,6 +44,7 @@ function createSelector(header) {
     });
 }  
 
+// function to get the animation parameters based on the selected header
 function getAnimationParameters() {
   const animation = searchTool.value;
   let index = header.indexOf(animation);
@@ -48,6 +53,7 @@ function getAnimationParameters() {
   populateAnimationStates();
 }
 
+// function made to populate the sprite animations based on the animation parameters
 function populateAnimationStates() {
     const indSpriteHeight = parseInt(document.getElementById("spriteHeight").value);
     const indSpriteWidth = parseInt(document.getElementById("spriteWidth").value);
@@ -79,7 +85,7 @@ animateBtn.addEventListener("click", function() {
     createAndAnimate(file, spriteHeight, spriteWidth, speed, animationName);
   });
   
-
+ // fn to create and animate the sprite based on the input parameters
 function createAndAnimate(file, spriteHeight, spriteWidth, speed, animationName) {
     const canvasContainer = document.querySelector(".canvas-container");
     // check if there's an existing canvas and delete it
