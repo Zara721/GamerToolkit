@@ -8,6 +8,7 @@ const sortToolSelect = document.getElementById('sortTool');
 const sortTypeSelect = document.getElementById('sortType');
 
 uploadFile.addEventListener('change', () => {
+     // read the contents of the selected file as text
     const fileReader = new FileReader();
     fileReader.readAsText(uploadFile.files[0]);
     fileReader.onload = function () {
@@ -19,13 +20,17 @@ uploadFile.addEventListener('change', () => {
     }
 });
 
+// function to make the filter options based on header values in cvs file
 function createFilter(text) {
     //remove any existing entries
     while (sortTool.firstChild) {
         sortTool.removeChild(sortTool.firstChild);
       }
 
-    let headValues = text.split(',')
+    // split the text into an array of header values
+    let headValues = text.split(',');
+
+    //each header value gets an entry on the filter 
     for (var ii = 0; ii < headValues.length; ii++) {
         let newOption = document.createElement("option");
         newOption.value = headValues[ii];
@@ -42,7 +47,7 @@ confirmBtn.addEventListener('click', () => {
     fileReader.onload = function () {
         const text = fileReader.result;
 
-        // parse CSV data into array of objects
+        // parse cvs data into array of objects
         const data = parseCSV(text);
 
         console.log(data)
@@ -91,7 +96,7 @@ confirmBtn.addEventListener('click', () => {
     }
 });
 
-// made to parse CSV data into an array of objects
+// made to parse cvs data into an array of objects
 function parseCSV(text) {
     const lines = text.split('\n');
     const header = lines[0].split(',');
@@ -107,7 +112,7 @@ function parseCSV(text) {
     return data;
   }
   
-  // make an HTML table from an array of objects
+  // make an html table from an array of objects
 function createTable(data) {
     const header = Object.keys(data[0]);
     const table = document.createElement('table');
